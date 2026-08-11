@@ -1,11 +1,18 @@
 import React from "react";
 import "./BasicCard.scss";
 
-const Media = ({ image, videoLink }) => {
+const Media = ({ image, videoLink, title }) => {
   if (image) {
     return <img src={image} alt=" " />;
   } else if (videoLink) {
-    return <iframe src={videoLink} allowfullscreen frameborder={0} />;
+    return (
+      <iframe
+        title={`${title} video`}
+        src={videoLink}
+        allowFullScreen
+        frameBorder={0}
+      />
+    );
   }
 
   return null;
@@ -21,7 +28,7 @@ const BasicCard = ({ image, videoLink, title, caption, children }) => {
         {children}
       </div>
       <div className="basic-card--media-section">
-        <Media image={image} videoLink={videoLink} />
+        <Media image={image} videoLink={videoLink} title={title} />
         {caption && <p>{caption}</p>}
       </div>
     </div>
