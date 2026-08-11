@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode/
+
+# Vercel local project settings
+.vercel
